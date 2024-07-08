@@ -4,14 +4,16 @@ import Footer from "./components/Footer";
 import Body from "./components/Body";
 import Bag from "./components/Bag";
 import { createBrowserRouter, Outlet } from "react-router-dom";
+import {Provider} from "react-redux";
+import { store } from "./store/store";
 
 function App() {
   return (
-    <div>
+    <Provider store={store}  >
       <Header />
       <Outlet />
       <Footer />
-    </div>
+    </Provider>
   );
 }
 

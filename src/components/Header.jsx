@@ -1,4 +1,4 @@
-import logo from "../assets/images/myntra_logo.webp";
+import logo from "../images/myntra_logo.webp";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
