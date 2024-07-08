@@ -5,6 +5,7 @@ return (
   <main>
     <div className="main_container">
 
+
       <div className="item-card">
         <img className="item-image" src={image} alt="" />
         <div className="rating">
