@@ -1,4 +1,3 @@
-import logo from "../images/myntra_logo.webp";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
@@ -7,9 +6,13 @@ const Header = () => {
   return (
     <header>
       <div className="logo_container">
-        <a href="#">
-          <img className="myntra_home" src={logo} alt="Myntra Home" />
-        </a>
+        <Link to="/">
+          <img
+            className="myntra_home"
+            src="images/myntra_logo.webp"
+            alt="Myntra Home"
+          />
+        </Link>
       </div>
       <nav className="nav_bar">
         <a href="#">Men</a>
