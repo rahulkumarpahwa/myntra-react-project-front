@@ -1,16 +1,7 @@
 import ItemCard from "./ItemCard";
-import { useState, useEffect } from "react";
-
+import useFetchItems from "../utils/useFetchItems";
 const Body = () => {
-  const [items, setItems] = useState([]);
-  const fetchItems = async () => {
-    const data = await fetch("http://localhost:8080/items");
-    const json = await data.json();
-    setItems(json.items);
-  };
-  useEffect(() => {
-    fetchItems();
-  }, []);
+  const items = useFetchItems();
   return (
     <main>
       <div className="main_container">

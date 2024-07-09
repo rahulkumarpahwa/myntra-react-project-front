@@ -1,5 +1,11 @@
+import filterItem from "../utils/filterItem";
 
-const ItemCard = ({item}) => {
+const ItemCard = ({ item }) => {
+  const findItem = () => {
+    const findItem = filterItem(item.id);
+    console.log(findItem);
+  };
+
   return (
     <div className="item-card">
       <img className="item-image" src={item.image} alt="" />
@@ -11,9 +17,13 @@ const ItemCard = ({item}) => {
       <div className="price">
         <span className="current-price">Rs {item.current_price}</span>
         <span className="original-price">Rs {item.original_price}</span>
-        <span className="discount-percentage">({item.discount_percentage}% OFF)</span>
+        <span className="discount-percentage">
+          ({item.discount_percentage}% OFF)
+        </span>
       </div>
-      <button className="btn-add-bag">Add To Bag</button>
+      <button className="btn-add-bag" onClick={findItem}>
+        Add To Bag
+      </button>
     </div>
   );
 };

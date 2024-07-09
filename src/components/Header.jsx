@@ -22,7 +22,12 @@ const Header = () => {
         </a>
       </nav>
       <div className="search_bar">
-        <span className="material-symbols-outlined search_icon" >search</span>
+        <span
+          className="material-symbols-outlined search_icon"
+          onClick={() => console.log(inputElement.current.value)}
+        >
+          search
+        </span>
         <input
           className="search_input text-center"
           placeholder="Search for products, brands and more"
