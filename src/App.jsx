@@ -4,16 +4,15 @@ import Footer from "./components/Footer";
 import Body from "./components/Body";
 import Bag from "./components/Bag";
 import { createBrowserRouter, Outlet } from "react-router-dom";
-import {Provider} from "react-redux";
-import { store } from "./store/store";
+import itemsLoader from "./utils/itemsLoader"
 
 function App() {
   return (
-    <Provider store={store}  >
+    <div>
       <Header />
       <Outlet />
       <Footer />
-    </Provider>
+    </div>
   );
 }
 
@@ -25,6 +24,7 @@ export const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <Body />,
+        loader: itemsLoader,
       },
       {
         path: "/bag",

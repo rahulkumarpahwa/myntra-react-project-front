@@ -1,10 +1,4 @@
-import filterItem from "../utils/filterItem";
-
 const ItemCard = ({ item }) => {
-  const findItem = () => {
-    const findItem = filterItem(item.id);
-    console.log(findItem);
-  };
 
   return (
     <div className="item-card">
@@ -21,7 +15,7 @@ const ItemCard = ({ item }) => {
           ({item.discount_percentage}% OFF)
         </span>
       </div>
-      <button className="btn-add-bag" onClick={findItem}>
+      <button className="btn-add-bag" onClick={()=>{console.log("Adding Item to bag")}}>
         Add To Bag
       </button>
     </div>
