@@ -1,10 +1,9 @@
 import { useDispatch } from "react-redux";
 import { removeItem } from "../store/cartSlice";
+import toast from "react-hot-toast";
 
-const BagItems = ({item}) => {
+const BagItems = ({ item }) => {
   const dispatch = useDispatch();
-
-
   return (
     <div className="bag-items-container">
       <div className="bag-item-container">
@@ -22,7 +21,9 @@ const BagItems = ({item}) => {
             </span>
           </div>
           <div className="return-period">
-            <span className="return-period-days">{item.return_period} days</span>{" "}
+            <span className="return-period-days">
+              {item.return_period} days
+            </span>{" "}
             return available
           </div>
           <div className="delivery-details">
@@ -31,7 +32,18 @@ const BagItems = ({item}) => {
           </div>
         </div>
 
-        <div className="remove-from-cart" onClick={()=>dispatch(removeItem(item))}>X</div>
+        <div
+          className="remove-from-cart"
+          onClick={() => {
+            dispatch(removeItem(item.id));
+            toast(`${item.item_name} removed from Cart!`, {
+              position: "top-center",
+              className: "font-bold",
+            });
+          }}
+        >
+          X
+        </div>
       </div>
     </div>
   );

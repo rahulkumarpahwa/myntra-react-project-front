@@ -30,11 +30,11 @@ const ItemCard = ({ item }) => {
             toast(`${item.item_name} Added to Cart!`, {
               duration: 1000,
               position: "top-center",
-              className: "font-bold"
+              className: "font-bold",
             });
           }}
         >
-          Add To Bag
+          {cart.includes(item.id) ? "Add More" : "Add To Bag"}
         </button>
         {cart.includes(item.id) && (
           <button
@@ -47,7 +47,6 @@ const ItemCard = ({ item }) => {
                 className: "font-bold",
               });
             }}
-            
           >
             Remove
           </button>
