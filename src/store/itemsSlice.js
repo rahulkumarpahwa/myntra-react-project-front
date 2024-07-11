@@ -9,7 +9,11 @@ export const itemsSlice = createSlice({
       //or
       return action.payload;
     },
+    filterItems: (state, action) => {
+      // console.log(action);
+      return action.payload;
+    },
   },
 });
 
-export const { addInitialItems } = itemsSlice.actions;
+export const { addInitialItems, filterItems } = itemsSlice.actions;

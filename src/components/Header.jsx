@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addInitialItems, filterItems } from "../store/itemsSlice";
 
 const Header = () => {
   const inputElement = useRef();
+  const dispatch = useDispatch();
+  const items = useSelector((store) => store.items);
   const cart = useSelector((store) => store.cart);
+
   return (
     <header>
       <div className="logo_container">
@@ -29,7 +33,19 @@ const Header = () => {
       <div className="search_bar">
         <span
           className="material-symbols-outlined search_icon"
-          onClick={() => console.log(inputElement.current.value)}
+          onClick={() => {
+          
+            const initialState = items;
+              console.log("button clicked ", initialState);
+            if (inputElement.current.value === "") {
+              dispatch(addInitialItems(initialState));
+            } else {
+              const filteredItems = items.filter((item) =>
+                item.company.includes(inputElement.current.value)
+              );
+              dispatch(filterItems(filteredItems));
+            }
+          }}
         >
           search
         </span>
