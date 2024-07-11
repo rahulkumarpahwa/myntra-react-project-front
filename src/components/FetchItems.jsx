@@ -18,7 +18,7 @@ const FetchItems = () => {
       return;
     }
     dispatch(fetchingStarted());
-    fetch("http://localhost:8080/items")
+    fetch(`${import.meta.env.VITE_PORT}/items`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data.items);
