@@ -1,4 +1,10 @@
-const bagItems = ({item}) => {
+import { useDispatch } from "react-redux";
+import { removeItem } from "../store/cartSlice";
+
+const BagItems = ({item}) => {
+  const dispatch = useDispatch();
+
+
   return (
     <div className="bag-items-container">
       <div className="bag-item-container">
@@ -25,10 +31,10 @@ const bagItems = ({item}) => {
           </div>
         </div>
 
-        <div className="remove-from-cart" onClick={()=>{console.log("item removed from cart")}}>X</div>
+        <div className="remove-from-cart" onClick={()=>dispatch(removeItem(item))}>X</div>
       </div>
     </div>
   );
 };
 
-export default bagItems;
+export default BagItems;

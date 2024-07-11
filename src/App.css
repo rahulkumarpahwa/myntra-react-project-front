@@ -312,6 +312,20 @@ header {
   width: 100%;
   cursor: pointer;
 }
+
+.btn-remove-bag {
+  font-size: 15px;
+  margin-top: 5px;
+  font-weight: 600;
+  color: white;
+  background-color: red;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
 .bag-item-count {
   background-color: #f16565;
   white-space: nowrap;
@@ -332,7 +346,6 @@ header {
 a.action_container:link {
   color: black;
 }
-
 
 /* Bag component css */
 .bag-items-container {
@@ -471,5 +484,3 @@ a.action_container:link {
   height: 14px;
   cursor: pointer;
 }
-
-

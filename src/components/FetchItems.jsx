@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import {
   markFetchDone,
@@ -10,7 +11,7 @@ import { addInitialItems } from "../store/itemsSlice";
 
 const FetchItems = () => {
   const fetchStatus = useSelector((store) => store.fetchStatus);
-  const { currentlyFetching, fetchDone } = fetchStatus;
+  const { fetchDone } = fetchStatus;
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -30,14 +31,6 @@ const FetchItems = () => {
       });
   }, [fetchDone, dispatch]);
 
-  return (
-    <div>
-      {currentlyFetching && (
-        <div className=" text-center m-16 p-16 animate-pulse text-3xl antialiased font-thin">
-          Getting the Best Items for you!!
-        </div>
-      )}
-    </div>
-  );
+  return <></>; //headless component, component without anything to get returned to be rendered.
 };
 export default FetchItems;

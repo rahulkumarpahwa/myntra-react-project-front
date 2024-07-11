@@ -1,4 +1,11 @@
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, removeItem } from "../store/cartSlice";
+import toast from "react-hot-toast";
+
 const ItemCard = ({ item }) => {
+  const dispatch = useDispatch();
+  const cart = useSelector((store) => store.cart);
+
 
   return (
     <div className="item-card">
@@ -15,9 +22,37 @@ const ItemCard = ({ item }) => {
           ({item.discount_percentage}% OFF)
         </span>
       </div>
-      <button className="btn-add-bag" onClick={()=>{console.log("Adding Item to bag")}}>
-        Add To Bag
-      </button>
+      <div className="flex gap-2">
+        <button
+          className="btn-add-bag"
+          onClick={() => {
+            dispatch(addItem(item.id));
+            toast(`${item.item_name} Added to Cart!`, {
+              duration: 1000,
+              position: "top-center",
+              className: "font-bold"
+            });
+          }}
+        >
+          Add To Bag
+        </button>
+        {cart.includes(item.id) && (
+          <button
+            className="btn-remove-bag"
+            onClick={() => {
+              dispatch(removeItem(item.id));
+              toast(`${item.item_name} removed from Cart!`, {
+                duration: 1000,
+                position: "top-center",
+                className: "font-bold",
+              });
+            }}
+            
+          >
+            Remove
+          </button>
+        )}
+      </div>
     </div>
   );
 };

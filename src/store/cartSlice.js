@@ -6,10 +6,12 @@ export const cartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       //here state is mutable.
+      // return state = [...state, action.payload];
+      //or
       state.push(action.payload);
     },
     removeItem: (state, action) => {
-      state = state.filter((value) => value.id != action.payload.id);
+      return state.filter((value) => value != action.payload);
     },
   },
 });

@@ -5,14 +5,19 @@ import Body from "./components/Body";
 import Bag from "./components/Bag";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import FetchItems from "./components/FetchItems";
+import { useSelector } from "react-redux";
+import Loading from "./components/Loading";
+import { Toaster } from "react-hot-toast";
 
 function App() {
+  const { currentlyFetching } = useSelector((store) => store.fetchStatus);
   return (
     <div>
       <Header />
       <FetchItems />
-      <Outlet />
+      {currentlyFetching ? <Loading></Loading> : <Outlet />}
       <Footer />
+      <Toaster />
     </div>
   );
 }
