@@ -40,7 +40,7 @@ return (
     </div>
     <hr />
 
-    <div className="copyright">© 2023 www.myntra.com. All rights reserved.</div>
+    <div className="copyright">© 2024. All rights reserved.</div>
   </footer>
 );
 
