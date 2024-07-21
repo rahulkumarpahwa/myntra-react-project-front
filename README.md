@@ -21,4 +21,4 @@ This is Myntra full stack project build under [React-Redux Projects](https://git
 
 ## Backend : 
 
-For Backend of this project refer to [](https://github.com/rahulkumarpahwa/)
+For Backend of this project refer to [myntra-react-project-back](https://github.com/rahulkumarpahwa/myntra-react-project-back)
