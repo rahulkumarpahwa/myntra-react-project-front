@@ -12,11 +12,13 @@ This is Myntra full stack project build under [React-Redux Projects](https://git
 ## Usage : 
 
 1. Open your terminal and go to particular folder when you want to clone or open terminal in IDE.
-2. Type ```git clone https://github.com/rahulkumarpahwa/myntra-react-project-front```
-3. Now, type ```npm i``` and all the node modules required will be installed.
-4. Type ```touch .env``` to create a env file and Paste ```VITE_PORT = http://localhost:8080```
-5. Run command ```npm run dev``` to start the server in Development environment.
-6. Go to ```http://localhost:5173``` in browser and Project will be shown.
+2. Type ```mkdir Frontend``` to create a folder for Frontend and then ```mkdir Backend``` to create a folder for Backend.
+3. Now type ```cd Frontend``` and then type ```git clone https://github.com/rahulkumarpahwa/myntra-react-project-front``` to clone the frontend.
+4. Again, type ```cd ../Backend``` and then type ```git clone https://github.com/rahulkumarpahwa/myntra-react-project-back``` to clone the backend.
+5. Now, type ```npm i``` by redirecting to each folder and all the node packages required will be installed.
+6. Type ```touch .env``` to create a .env file and Paste ```VITE_PORT = http://localhost:8080``` in Frontend folder.
+7. Run command ```npm run dev``` to start the server in Development environment by redirecting to each folder.
+8. Go to ```http://localhost:5173``` in browser and Project will be shown.
 
 
 ## Backend : 
